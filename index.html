@@ -59,6 +59,11 @@
 
         let consumption = document.getElementById("consumption").value;
 
+        if(consumption = " ") {
+            window.alert("Please input your kWh usage.");
+            return;
+        }
+
         if(consumption > 500) {
             category = "Very High Consumption";
             description = "Heavy electricity users";
@@ -86,4 +91,5 @@
 </script>
     
 </body>
+
 </html>
