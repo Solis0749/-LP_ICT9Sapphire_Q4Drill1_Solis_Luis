@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drill 1</title>
+
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+            margin-top: 80px;
+            background-color: beige;
+        }
+
+        .container {
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            width: 300px;
+            margin: auto;
+            border: 1px solid black;
+        }
+
+        input {
+            padding: 6px;
+            width: 80%;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 8px;
+        }
+
+        output {
+            margin-top: 15px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2> Electricity Consumption Classifier</h2>
+
+        <br>
+
+        <h2> kWh </h2>
+
+        <div class="output">
+            <input type="number" id="consumption" placeholder="Input kilowatt per hour">
+            <button onclick="classify()"> Consumption Classification </button>
+        </div>
+    </div>
+
+<script>
+    function classify() {
+        var category = " ";
+        var description = " ";
+
+        let consumption = document.getElementById("consumption").value;
+
+        if(consumption > 500) {
+            category = "Very High Consumption";
+            description = "Heavy electricity users";
+        }
+        else if(consumption >=301) {
+            category = "High Consumption";
+            description = "Higher electricity usage";
+        }
+        else if(consumption >=201) {
+            category = "Average Consumption";
+            description = "Typical electricity usage";
+        }
+        else if(consumption >=101) {
+            category = "Low Consumption";
+            description = "Normal residential rate";
+        }
+        else{
+            category = "Lifeline Consumer";
+            description = "Discounted electricity rates";
+        }
+
+        window.alert(category + " " + ":" + " " + description);
+
+    }
+</script>
+    
+</body>
+</html>
